@@ -215,7 +215,7 @@
                   <script>
                       document.write(new Date().getFullYear());
                   </script>
-                  , Samara Medika
+                  , CV. SAR
                 </div>
               </div>
             </footer>
