@@ -66,6 +66,8 @@ Route::get('medical-checkup', [MemberController::class, 'medicalCheckup'])->name
 
 Route::get('profile', [HomeController::class, 'profile'])->name('profile');
 
+Route::get('menu/{slug}', [HomeController::class, 'menu']);
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -107,7 +109,7 @@ Route::middleware([
     Route::get('document/{id}/edit-file', [MemberController::class, 'addFile'])->name('document.add-file');
     Route::put('document/{id}/update', [MemberController::class, 'updateFile'])->name('document.update');
     Route::delete('document/{id}/destroy-file', [MemberController::class, 'destroyFile'])->name('document.destroy-file');
-    
+
     Route::get('/members/{id}/upload-file', [MemberController::class, 'uploadFile'])->name('members.upload-file');
     Route::put('members/{id}/insert/file', [MemberController::class, 'insertFile'])->name('members.insert-file');
 

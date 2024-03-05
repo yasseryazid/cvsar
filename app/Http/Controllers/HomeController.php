@@ -77,4 +77,13 @@ class HomeController extends Controller
     {
         return view('users.profile.index');
     }
+
+    public function menu($slug)
+    {
+        $menu = Menu::where('url', $slug)->first();
+
+        return view('menu.index', [
+            'menu' => $menu
+        ]);
+    }
 }

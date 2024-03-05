@@ -4,10 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" 
+  <meta name="description"
     content="An impressive and flawless site template that includes various UI elements and countless features, attractive ready-made blocks and rich pages, basically everything you need to create a unique and professional website."
   >
-  <meta name="keywords" 
+  <meta name="keywords"
     content="bootstrap 5, business, corporate, creative, gulp, marketing, minimal, modern, multipurpose, one page, responsive, saas, sass, seo, startup, html5 template, site template"
   >
   <meta name="author" content="elemis">
@@ -23,36 +23,43 @@
         <div class="container flex-lg-row flex-nowrap align-items-center">
           <div class="navbar-brand w-100">
             <a href="./index.html">
-              <img 
-                src="{{asset('client/assets')}}/img/logo.png" 
-                srcset="{{asset('client/assets')}}/img/logo.png" 
-                style="width: 30%" 
-                alt="" 
+              <img
+                src="{{asset('client/assets')}}/img/logo.png"
+                srcset="{{asset('client/assets')}}/img/logo.png"
+                style="width: 30%"
+                alt=""
               />
             </a>
           </div>
           <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
             <div class="offcanvas-header d-lg-none">
               <h3 class="text-white fs-30 mb-0">CV. SAR</h3>
-              <button 
-                type="button" 
-                class="btn-close btn-close-white" 
-                data-bs-dismiss="offcanvas" 
+              <button
+                type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="offcanvas"
                 aria-label="Close">
               </button>
             </div>
             <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
               <div class="navbar-nav">
-                <a 
-                  class="nav-link nav-item {{ request()->routeIs('home') ? 'active' : '' }}" 
+                <a
+                  class="nav-link nav-item {{ request()->routeIs('home') ? 'active' : '' }}"
                   href="{{ url('/') }}">
                     Home
                 </a>
-                <a 
-                  class="nav-link nav-item {{ request()->routeIs('profile') ? 'active' : '' }}" 
+                <a
+                  class="nav-link nav-item {{ request()->routeIs('profile') ? 'active' : '' }}"
                   href="{{ url('/profile') }}">
                     Profile
                 </a>
+                @foreach ($menus as $menu)
+                    <a
+                        class="nav-link nav-item {{ request()->is('menu/' . $menu->url) ? 'active' : '' }}"
+                        href="{{ url('/menu/' . $menu->url) }}">
+                        {{ $menu->title }}
+                    </a>
+                @endforeach
                 {{-- @foreach ($data as $row)
                     <a href="" class="nav-link nav-item">{{ $row }}</a>
                 @endforeach --}}
@@ -71,11 +78,11 @@
       <div class="row gy-6 gy-lg-0">
         <div class="col-md-3 col-lg-4">
           <div class="widget">
-            <img class="mb-4" 
-              src="{{asset('client/assets')}}/img/logo-white.png" 
-              srcset="{{asset('client/assets')}}/img/logo-white.png" 
-              style="width: 60%" 
-              alt="" 
+            <img class="mb-4"
+              src="{{asset('client/assets')}}/img/logo-white.png"
+              srcset="{{asset('client/assets')}}/img/logo-white.png"
+              style="width: 60%"
+              alt=""
             />
             <p class="mb-4">© 2024 CV. SAR All rights reserved.</p>
           </div>
@@ -83,7 +90,7 @@
         <div class="col-md-3 col-lg-4">
           <div class="widget">
             <h4 class="widget-title text-white mb-3">Alamat Kami</h4>
-            <address 
+            <address
               class="pe-xl-15 pe-xxl-17">
                 CV Sumber Agung Rejeki, Perum Griya Nadhifa C.24 Giripeni Kec. Wates Kab. Kulon Progo - Kulon Progo (Kab.) - DI Yogyakarta
             </address>
