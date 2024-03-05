@@ -96,31 +96,6 @@
               </a>
             </li>
 
-            <!-- Layouts -->
-            <li class="menu-item {{ (request()->routeIs('abouts*') or
-            request()->routeIs('carousels*') or
-            request()->routeIs('services*') or
-            request()->routeIs('staffs*'))
-                ? 'open'
-                : '' }}">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Layouts">Layouts</div>
-              </a>
-
-              <ul class="menu-sub">
-                <li class="menu-item {{ request()->routeIs('carousels*') ? 'active' : '' }}">
-                  <a href="{{ route('carousels.index') }}" class="menu-link">
-                    <div data-i18n="Without menu">Image Slider</div>
-                  </a>
-                </li>
-                <li class="menu-item {{ request()->routeIs('abouts*') ? 'active' : '' }}">
-                  <a href="{{ route('abouts.index') }}" class="menu-link">
-                    <div data-i18n="Without navbar">About us</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
             <li class="menu-item {{ request()->routeIs('menus*') ? 'active' : '' }}">
               <a href="{{ route('menus.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-table"></i>
